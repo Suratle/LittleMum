@@ -1,0 +1,99 @@
+/* ตั้งค่าพื้นฐาน */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fffaf0;
+  color: #333;
+}
+
+/* ส่วน Hero */
+.hero {
+  height: 100vh;
+  background-image: url("main.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 60px;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px 40px;
+  border-radius: 12px;
+}
+
+/* ส่วนอัลบั้ม */
+.album {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.album h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* ✅ กำหนดให้คอมเห็น 4 รูปต่อแถว */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.farm-photo {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.farm-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.farm-photo img:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Responsive สำหรับแท็บเล็ต */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+    padding: 16px 32px;
+  }
+}
+
+/* ✅ Responsive สำหรับมือถือ */
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    height: 70vh;
+    padding-bottom: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+    padding: 14px 20px;
+  }
+}
